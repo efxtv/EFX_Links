@@ -126,7 +126,7 @@ rm -rf ip.txt
 #Payload link generater
 echo -en "\e[1;31m[\e[0m\e[1;37mOk\e[0m\e[1;31m]\e[0m\e[1;92m Enter the payload path? : "
 read payloadp
-
+printf "\n"
 echo -en "\e[1;31m[\e[0m\e[1;37mOk\e[0m\e[1;31m]\e[0m\e[1;92m Enter the payload name You want to share ?: "
 read payloady
 cp $payloadp/$payloady output
