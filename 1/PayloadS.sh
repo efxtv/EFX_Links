@@ -99,7 +99,7 @@ echo " "
 catch_ip() {
 ip=$(grep -a 'IP:' ip.txt | cut -d " " -f2 | tr -d '\r')
 device=$(grep -a 'User-Agent:' ip.txt | cut -d " " -f2- | tr -d '\r'|tr \) ' '|tr /} ' ')
-iplookup=$(curl -s https://json.geoiplookup.io/103.57.84.18|tr , '\n'|tr \" ' '|tr }/ ' '|tr {/ ' '|tr a-z A-Z|tr -s ' '|grep -v "PREMIUM"|grep -v "SUCCESS"|grep "\S")
+iplookup=$(curl -s https://json.geoiplookup.io/$ip|tr , '\n'|tr \" ' '|tr }/ ' '|tr {/ ' '|tr a-z A-Z|tr -s ' '|grep -v "PREMIUM"|grep -v "SUCCESS"|grep "\S")
 IFS=$'\n'
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] DEVICE:\e[0m\e[1;77m %s\e[0m\n" $device
