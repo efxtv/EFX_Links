@@ -22,9 +22,12 @@ echo -en "\e[1;31m[\e[0m\e[1;37m02\e[0m\e[1;31m]\e[0m\e[1;93m PAYLOAD LINK SHARE
 echo -en "\e[1;31m[\e[0m\e[1;37m03\e[0m\e[1;31m]\e[0m\e[1;93m ONLY PORT FORWARD\e[0m\n"
 echo -en "\e[1;31m[\e[0m\e[1;37m04\e[0m\e[1;31m]\e[0m\e[1;93m TCP PORT FORWARD \e[0m\n"
 echo -en "\e[1;31m[\e[0m\e[1;37m05\e[0m\e[1;31m]\e[0m\e[1;93m IP SHARE \e[0m\n"
-echo -en "\e[1;31m[\e[0m\e[1;37m06\e[0m\e[1;31m]\e[0m\e[1;93m UPDATE NGROK \e[0m\n"
-echo -en "\e[1;31m[\e[0m\e[1;37m07\e[0m\e[1;31m]\e[0m\e[1;93m CLOSE ALL CONNECTIONS \e[0m\n"
-echo -en "\e[1;31m[\e[0m\e[1;37m08\e[0m\e[1;31m]\e[0m\e[1;93m QUIT \e[0m\n"
+#New
+echo -en "\e[1;31m[\e[0m\e[1;37m06\e[0m\e[1;31m]\e[0m\e[1;93m WEB CLONE AND HOST \e[0m\n"
+#Newends
+echo -en "\e[1;31m[\e[0m\e[1;37m07\e[0m\e[1;31m]\e[0m\e[1;93m UPDATE NGROK \e[0m\n"
+echo -en "\e[1;31m[\e[0m\e[1;37m08\e[0m\e[1;31m]\e[0m\e[1;93m CLOSE ALL CONNECTIONS \e[0m\n"
+echo -en "\e[1;31m[\e[0m\e[1;37m09\e[0m\e[1;31m]\e[0m\e[1;93m QUIT \e[0m\n"
 echo -en "[\e[0mENTER\e[1;92m] Please select your Requirement :"
 read input
 
@@ -55,9 +58,16 @@ then
 then
   cd 1
   ./Ipshare.sh
+  
+  #NEW
+ elif [[ $input == "6" || $input == "06" ]];
+then
+  cd 1
+  ./webclone.sh
+  #NEW
 
   
-  elif [[ $input == "6" || $input == "06" ]];
+  elif [[ $input == "7" || $input == "07" ]];
 then
   cd 1
 printf "\e[1;92m[\e[0m-+\e[1;92m] Checking for Ngrok Executable...\n"
@@ -116,7 +126,7 @@ cd -
 ./run.sh
   
   
-elif [[ $input == "7" || $input == "07" ]];
+elif [[ $input == "8" || $input == "08" ]];
 then
   killall -2 ngrok > /dev/null 2>&1
 pkill -f -2 ngrok > /dev/null 2>&1
@@ -129,7 +139,7 @@ sleep 2
 echo -en "[\e[0m+\e[1;92m] Returning back to main menu \n"
 sleep 2
 ./run.sh
-elif [[ $input == "8" || $input == "08" ]];
+elif [[ $input == "9" || $input == "09" ]];
 then
 sleep 2
 echo -en "[\e[0m+\e[1;92m] Thank you \n"
